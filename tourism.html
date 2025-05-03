@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tourism.in</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: whitesmoke; /* Adjusted background color for better contrast */
+        color: #333;
+        line-height: 1.6;
+      }
+      header {
+        /* Enhanced gradient for a richer look */
+        color: white;
+        padding: 40px 20px; /* Increased padding for better spacing */
+        text-align: center;
+        
+        
+        font-size: 1.2rem; /* Slightly larger font size */
+      }
+      nav {
+        background-color: #2c3e50;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        font-size: 1rem; /* Adjusted font size for better readability */
+      }
+      nav a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 16px 25px; /* Increased padding for better spacing */
+        text-decoration: none;
+        font-weight: bold;
+        transition: background 0.3s ease, color 0.3s ease;
+      }
+      nav a:hover {
+        background-color: #1abc9c;
+        color: #ffffff;
+      }
+      .dropdown {
+        float: left;
+        overflow: hidden;
+      }
+      .dropdown select {
+        padding: 16px; /* Increased padding for consistency */
+        border: none;
+        background-color: #2c3e50;
+        color: white;
+        font-size: 16px;
+        outline: none;
+        cursor: pointer;
+        border-radius: 5px; /* Added border radius for a smoother look */
+      }
+      .main-container {
+        display: flex;
+        justify-content: space-between; /* Ensure balanced spacing between left and right sections */
+        align-items: flex-start; /* Align items at the top */
+        gap: 20px; /* Add spacing between sections */
+        padding: 20px;
+      }
+      .main-content {
+        display: flex;
+        flex-direction: column; /* Arrange content in a column */
+        gap: 10px; /* Add spacing between containers */
+        width: 80%; /* Adjusted width for left section */
+        background-color: #ffffff; /* Added background color for content area */
+        border-radius: 10px; /* Added border radius for a modern look */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+        padding: 20px; /* Adjusted padding */
+      }
+      .left {
+        flex: 3;
+      }
+      .left img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        margin-bottom: 20px; /* Added margin between images */
+      }
+      .right2 {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      .right2 h2 {
+        color: #e74c3c;
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+      }
+      .right2 img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+      .right2 img:hover {
+        transform: scale(1.05);
+      }
+      .right {
+        width: 30%; /* Adjusted width for right section */
+        background-color: #ffffff;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        border-radius: 8px;
+        border-left: 5px solid #e74c3c;
+        font-size: 1rem; /* Adjusted font size for better readability */
+      }
+      .footer {
+        background-color: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 20px; /* Increased padding for better spacing */
+        margin-top: 30px;
+        font-size: 1rem; /* Increased font size for better readability */
+        letter-spacing: 0.5px;
+        clear: both; /* Ensure footer clears floated elements */
+      }
+      img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+      img:hover {
+        transform: scale(1.05);
+      }
+      video {
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 10px;
+      }
+      h2 {
+        color: #e74c3c;
+        margin-bottom: 15px;
+      }
+      p {
+        margin-bottom: 15px;
+      }
+      button {
+        background-color: #ff416c;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+      }
+      button:hover {
+        background-color: #ff4b2b;
+      }
+      #para {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: white;
+        background: url("https://c4.wallpaperflare.com/wallpaper/85/106/382/5c1cccd089d0d-wallpaper-preview.jpg")
+          no-repeat center center;
+        background-size: cover;
+        text-align: center;
+        padding: 170px; /* Increased padding for better visibility */
+        border: 2px solid #ff4b2b;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        font-size: 1.5rem; /* Increased font size for better readability */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      #para:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .card-container,
+      .card-container2 {
+        display: flex;
+        flex-wrap: wrap; /* Ensure cards wrap to the next row if needed */
+        justify-content: space-between;
+        gap: 10px;
+        margin-top: 20px;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .card {
+        flex: 1 1 calc(25% - 20px); /* Adjust card width to fit 4 per row with spacing */
+        max-width: 200px; /* Maintain consistent card size */
+        background-color: #ffffff; /* Fixed invalid hex color code */
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+      }
+      .card img {
+        width: 100%;
+        border-bottom: 3px solid #ff416c;
+      }
+      .card h3 {
+        color: #e74c3c;
+        margin: 10px 0;
+      }
+      .card p {
+        padding: 0 10px;
+        color: #555;
+        font-size: 0.8rem;
+      }
+      .card button {
+        margin: 10px 0;
+        background-color: #ff416c;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        transition: background-color 0.3s ease;
+      }
+      .card button:hover {
+        background-color: #ff4b2b;
+      }
+      .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .social-icons {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      .social-icons h2 {
+        color: #e74c3c;
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+      }
+      .social-icons a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #333;
+        font-size: 1.5rem;
+        transition: color 0.3s ease;
+      }
+      .social-icons a:hover {
+        color: #e74c3c;
+      }
+      /* From Uiverse.io by wilsondesouza */
+      ul {
+        list-style: none;
+      }
+
+      .example-2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .example-2 .icon-content {
+        margin: 0 10px;
+        position: relative;
+      }
+      .example-2 .icon-content .tooltip {
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+        padding: 6px 10px;
+        border-radius: 5px;
+        opacity: 0;
+        visibility: hidden;
+        font-size: 14px;
+        transition: all 0.3s ease;
+      }
+      .example-2 .icon-content:hover .tooltip {
+        opacity: 1;
+        visibility: visible;
+        top: -50px;
+      }
+      .example-2 .icon-content a {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        color: #4d4d4d;
+        background-color: #fff;
+        transition: all 0.3s ease-in-out;
+      }
+      .example-2 .icon-content a:hover {
+        box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+      }
+      .example-2 .icon-content a svg {
+        position: relative;
+        z-index: 1;
+        width: 30px;
+        height: 30px;
+      }
+      .example-2 .icon-content a:hover {
+        color: white;
+      }
+      .example-2 .icon-content a .filled {
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: #000;
+        transition: all 0.3s ease-in-out;
+      }
+      .example-2 .icon-content a:hover .filled {
+        height: 100%;
+      }
+
+      .example-2 .icon-content a[data-social="whatsapp"] .filled,
+      .example-2 .icon-content a[data-social="whatsapp"] ~ .tooltip {
+        background-color: #128c7e;
+      }
+
+      .example-2 .icon-content a[data-social="facebook"] .filled,
+      .example-2 .icon-content a[data-social="facebook"] ~ .tooltip {
+        background-color: #3b5998;
+      }
+      .example-2 .icon-content a[data-social="instagram"] .filled,
+      .example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
+        background: linear-gradient(
+          45deg,
+          #405de6,
+          #5b51db,
+          #b33ab4,
+          #c135b4,
+          #e1306c,
+          #fd1f1f
+        );
+      }
+      .example-2 .icon-content a[data-social="youtube"] .filled,
+      .example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
+        background-color: #ff0000;
+      }
+
+      .container {
+        max-width: 1170px;
+        margin: auto;
+      }
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      ul {
+        list-style: none;
+      }
+      .footer {
+        background-color: #24262b;
+        padding: 70px 0;
+      }
+      .footer-col {
+        width: 25%;
+        padding: 0 15px;
+      }
+      .footer-col h4 {
+        font-size: 18px;
+        color: #ffffff;
+        text-transform: capitalize;
+        margin-bottom: 35px;
+        font-weight: 500;
+        position: relative;
+      }
+      .footer-col h4::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        background-color: #e91e63;
+        height: 2px;
+        box-sizing: border-box;
+        width: 50px;
+      }
+      .footer-col ul li:not(:last-child) {
+        margin-bottom: 10px;
+      }
+      .footer-col ul li a {
+        font-size: 16px;
+        text-transform: capitalize;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 300;
+        color: #bbbbbb;
+        display: block;
+        transition: all 0.3s ease;
+      }
+      .footer-col ul li a:hover {
+        color: #ffffff;
+        padding-left: 8px;
+      }
+      .footer-col .social-links a {
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        background-color: rgba(255, 255, 255, 0.2);
+        margin: 0 10px 10px 0;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 50%;
+        color: #ffffff;
+        transition: all 0.5s ease;
+      }
+      .footer-col .social-links a:hover {
+        color: #24262b;
+        background-color: #ffffff;
+      }
+      /* From Uiverse.io by SelfMadeSystem */ 
+/*
+More comprehensive version at shenanigans.shoghisimon.ca/collection/css-rain-bg/
+ */
+
+ /*.containerx {
+    width: 100%;
+    height: 100%;
+    background: white;
+    background-image: radial-gradient(4px 100px at 0px 235px, #0f0, #0000),
+      radial-gradient(4px 100px at 300px 235px, #0f0, #0000),
+      radial-gradient(1.5px 1.5px at 150px 117.5px, #0f0 100%, #0000 150%),
+      radial-gradient(4px 100px at 0px 252px, #0f0, #0000),
+      radial-gradient(4px 100px at 300px 252px, #0f0, #0000),
+      radial-gradient(1.5px 1.5px at 150px 126px, #0f0 100%, #0000 150%),
+      radial-gradient(4px 100px at 0px 150px, #0f0, #0000),
+      radial-gradient(4px 100px at 300px 150px, #0f0, #0000),
+      radial-gradient(1.5px 1.5px at 150px 75px, #0f0 100%, #0000 150%),
+      radial-gradient(4px 100px at 0px 253px, #0f0, #0000),
+      radial-gradient(4px 100px at 300px 253px, #0f0, #0000),
+      radial-gradient(1.5px 1.5px at 150px 126.5px, #0f0 100%, #0000 150%),
+      radial-gradient(4px 100px at 0px 204px, #0f0, #0000),
+      radial-gradient(4px 100px at 300px 204px, #0f0, #0000),
+      radial-gradient(1.5px 1.5px at 150px 102px, #0f0 100%, #0000 150%),
+      radial-gradient(4px 100px at 0px 134px, #0f0, #0000),
+      radial-gradient(4px 100px at 300px 134px, #0f0, #0000),
+      radial-gradient(1.5px 1.5px at 150px 67px, #0f0 100%, #0000 150%),
+      radial-gradient(4px 100px at 0px 179px, #0f0, #0000),
+      radial-gradient(4px 100px at 300px 179px, #0f0, #0000),
+      radial-gradient(1.5px 1.5px at 150px 89.5px, #0f0 100%, #0000 150%),
+      radial-gradient(4px 100px at 0px 299px, #0f0, #0000),
+      radial-gradient(4px 100px at 300px 299px, #0f0, #0000),
+      radial-gradient(1.5px 1.5px at 150px 149.5px, #0f0 100%, #0000 150%),
+      radial-gradient(4px 100px at 0px 215px, #0f0, #0000),
+      radial-gradient(4px 100px at 300px 215px, #0f0, #0000),
+      radial-gradient(1.5px 1.5px at 150px 107.5px, #0f0 100%, #0000 150%),
+      radial-gradient(4px 100px at 0px 281px, #0f0, #0000),
+      radial-gradient(4px 100px at 300px 281px, #0f0, #0000),
+      radial-gradient(1.5px 1.5px at 150px 140.5px, #0f0 100%, #0000 150%),
+      radial-gradient(4px 100px at 0px 158px, #0f0, #0000),
+      radial-gradient(4px 100px at 300px 158px, #0f0, #0000),
+      radial-gradient(1.5px 1.5px at 150px 79px, #0f0 100%, #0000 150%),
+      radial-gradient(4px 100px at 0px 210px, #0f0, #0000),
+      radial-gradient(4px 100px at 300px 210px, #0f0, #0000),
+      radial-gradient(1.5px 1.5px at 150px 105px, #0f0 100%, #0000 150%);
+    background-size:
+      300px 235px,
+      300px 235px,
+      300px 235px,
+      300px 252px,
+      300px 252px,
+      300px 252px,
+      300px 150px,
+      300px 150px,
+      300px 150px,
+      300px 253px,
+      300px 253px,
+      300px 253px,
+      300px 204px,
+      300px 204px,
+      300px 204px,
+      300px 134px,
+      300px 134px,
+      300px 134px,
+      300px 179px,
+      300px 179px,
+      300px 179px,
+      300px 299px,
+      300px 299px,
+      300px 299px,
+      300px 215px,
+      300px 215px,
+      300px 215px,
+      300px 281px,
+      300px 281px,
+      300px 281px,
+      300px 158px,
+      300px 158px,
+      300px 158px,
+      300px 210px,
+      300px 210px,
+      300px 210px;
+    animation: hi 150s linear infinite;
+  }
+  
+  @keyframes hi {
+    0% {
+      background-position:
+        0px 220px,
+        3px 220px,
+        151.5px 337.5px,
+        25px 24px,
+        28px 24px,
+        176.5px 150px,
+        50px 16px,
+        53px 16px,
+        201.5px 91px,
+        75px 224px,
+        78px 224px,
+        226.5px 350.5px,
+        100px 19px,
+        103px 19px,
+        251.5px 121px,
+        125px 120px,
+        128px 120px,
+        276.5px 187px,
+        150px 31px,
+        153px 31px,
+        301.5px 120.5px,
+        175px 235px,
+        178px 235px,
+        326.5px 384.5px,
+        200px 121px,
+        203px 121px,
+        351.5px 228.5px,
+        225px 224px,
+        228px 224px,
+        376.5px 364.5px,
+        250px 26px,
+        253px 26px,
+        401.5px 105px,
+        275px 75px,
+        278px 75px,
+        426.5px 180px;
+    }
+    to {
+      background-position:
+        0px 6800px,
+        3px 6800px,
+        151.5px 6917.5px,
+        25px 13632px,
+        28px 13632px,
+        176.5px 13758px,
+        50px 5416px,
+        53px 5416px,
+        201.5px 5491px,
+        75px 17175px,
+        78px 17175px,
+        226.5px 17301.5px,
+        100px 5119px,
+        103px 5119px,
+        251.5px 5221px,
+        125px 8428px,
+        128px 8428px,
+        276.5px 8495px,
+        150px 9876px,
+        153px 9876px,
+        301.5px 9965.5px,
+        175px 13391px,
+        178px 13391px,
+        326.5px 13540.5px,
+        200px 14741px,
+        203px 14741px,
+        351.5px 14848.5px,
+        225px 18770px,
+        228px 18770px,
+        376.5px 18910.5px,
+        250px 5082px,
+        253px 5082px,
+        401.5px 5161px,
+        275px 6375px,
+        278px 6375px,
+        426.5px 6480px;
+    }
+  }*/
+        /* From Uiverse.io by mobinkakei */ 
+.containery {
+    width: 100%;
+    height: 100%;
+    --sz: 4px; /*** size ***/
+    --sp: 5s; /*** speed ***/
+    --b1: #211e1e; /*** color ***/
+    --b2: #1c1b18; /*** color ***/
+    --b3: #0c0b0a; /*** color ***/
+    --b4: #0c0b0ae0; /*** color ***/
+    --c1: #ff416c; /*** color ***/
+    --ts: 50% / calc(var(--sz) * 17.5) calc(var(--sz) * 29.5);
+    background:
+          /* black shadows */ radial-gradient(
+          circle at 50% 50%,
+          var(--b4) calc(var(--sz) * 1),
+          #fff0 calc(var(--sz) * 8)
+        )
+        var(--ts),
+      radial-gradient(
+          circle at 0% 0%,
+          var(--b4) calc(var(--sz) * 1),
+          #fff0 calc(var(--sz) * 8)
+        )
+        var(--ts),
+      radial-gradient(
+          circle at 0% 100%,
+          var(--b4) calc(var(--sz) * 1),
+          #fff0 calc(var(--sz) * 8)
+        )
+        var(--ts),
+      radial-gradient(
+          circle at 100% 0%,
+          var(--b4) calc(var(--sz) * 1),
+          #fff0 calc(var(--sz) * 8)
+        )
+        var(--ts),
+      radial-gradient(
+          circle at 100% 100%,
+          var(--b4) calc(var(--sz) * 1),
+          #fff0 calc(var(--sz) * 8)
+        )
+        var(--ts),
+      /* border bottom */
+        conic-gradient(
+          from 90deg at 97.5% 67%,
+          var(--c1) 0 87.5deg,
+          #fff0 88deg 100%
+        )
+        var(--ts),
+      /*repeated*/
+        conic-gradient(
+          from 90deg at 97.5% 67%,
+          var(--c1) 0 87.5deg,
+          #fff0 88deg 100%
+        )
+        var(--ts),
+      conic-gradient(
+          from 182.5deg at 2.5% 67%,
+          #fff0 0 0deg,
+          var(--c1) 0.5deg 90deg,
+          #fff0 0 100%
+        )
+        var(--ts),
+      /*repeated*/
+        conic-gradient(
+          from 182.5deg at 2.5% 67%,
+          #fff0 0 0deg,
+          var(--c1) 0.5deg 90deg,
+          #fff0 0 100%
+        )
+        var(--ts),
+      /* border top */
+        conic-gradient(
+          from 270deg at 2.5% 33%,
+          var(--c1) 0 87.5deg,
+          #fff0 88deg 100%
+        )
+        var(--ts),
+      /*repeated*/
+        conic-gradient(
+          from 270deg at 2.5% 33%,
+          var(--c1) 0 87.5deg,
+          #fff0 88deg 100%
+        )
+        var(--ts),
+      conic-gradient(
+          from 2.5deg at 97.5% 33%,
+          #fff0 0 0deg,
+          var(--c1) 0.5deg 90deg,
+          #fff0 0 100%
+        )
+        var(--ts),
+      /*repeated*/
+        conic-gradient(
+          from 2.5deg at 97.5% 33%,
+          #fff0 0 0deg,
+          var(--c1) 0.5deg 90deg,
+          #fff0 0 100%
+        )
+        var(--ts),
+      /* bottom */
+        conic-gradient(
+          from 116.5deg at 50% 85.5%,
+          var(--b1) 0 127deg,
+          #fff0 0 100%
+        )
+        var(--ts),
+      /*repeated*/
+        conic-gradient(
+          from 116.5deg at 50% 85.5%,
+          var(--b1) 0 127deg,
+          #fff0 0 100%
+        )
+        var(--ts),
+      /*repeated*/
+        conic-gradient(
+          from 116.5deg at 50% 85.5%,
+          var(--b1) 0 127deg,
+          #fff0 0 100%
+        )
+        var(--ts),
+      conic-gradient(from 120deg at 50% 83%, var(--c1) 0 120deg, #fff0 0 100%)
+        var(--ts),
+      /* top */
+        conic-gradient(
+          from -63.5deg at 50% 14.5%,
+          var(--b1) 0 127deg,
+          #fff0 0 100%
+        )
+        var(--ts),
+      /*repeated*/
+        conic-gradient(
+          from -63.5deg at 50% 14.5%,
+          var(--b1) 0 127deg,
+          #fff0 0 100%
+        )
+        var(--ts),
+      /*repeated*/
+        conic-gradient(
+          from -63.5deg at 50% 14.5%,
+          var(--b1) 0 127deg,
+          #fff0 0 100%
+        )
+        var(--ts),
+      conic-gradient(from -60deg at 50% 17%, var(--c1) 0 120deg, #fff0 0 100%)
+        var(--ts),
+      /* central gradient */
+        conic-gradient(
+          from 0deg at 50% 50%,
+          #fff0 0 2deg,
+          var(--b2) 2.5deg 57.5deg,
+          #fff0 58deg 62.5deg,
+          var(--b1) 63deg 117.5deg,
+          #fff0 118deg 122.5deg,
+          var(--b3) 123deg 177.5deg,
+          #fff0 178deg 182deg,
+          var(--b2) 182.5deg 237.5deg,
+          #fff0 0 242.5deg,
+          var(--b1) 243deg 297.5deg,
+          #fff0 298deg 302.5deg,
+          var(--b3) 303deg 357.5deg,
+          #fff0 358deg 360deg
+        )
+        var(--ts),
+      /* bg */ var(--c1);
+    animation: colors var(--sp) linear 0s infinite;
+  }
+  
+  @keyframes colors {
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    .main-container {
+      flex-direction: column; /* Stack sections vertically */
+      gap: 30px; /* Add spacing between stacked sections */
+    }
+
+    .main-content {
+      width: 100%; /* Full width for smaller screens */
+    }
+
+    .right {
+      width: 100%; /* Full width for smaller screens */
+    }
+  }
+
+  @media (max-width: 768px) {
+    nav a {
+      padding: 12px 15px; /* Reduce padding for smaller screens */
+      font-size: 0.9rem; /* Adjust font size */
+    }
+
+    .dropdown select {
+      font-size: 14px; /* Adjust dropdown font size */
+    }
+
+    .card {
+      flex: 1 1 calc(50% - 20px); /* Show 2 cards per row */
+    }
+  }
+
+  @media (max-width: 480px) {
+    header {
+      font-size: 1rem; /* Adjust header font size */
+      padding: 20px 10px; /* Reduce padding */
+    }
+
+    nav a {
+      font-size: 0.8rem; /* Smaller font size for links */
+    }
+
+    .card {
+      flex: 1 1 100%; /* Show 1 card per row */
+    }
+
+    .footer {
+      font-size: 0.9rem; /* Adjust footer font size */
+      padding: 15px; /* Reduce padding */
+    }
+
+    .social-icons h2 {
+      font-size: 1rem; /* Adjust heading size */
+    }
+
+    .social-icons a {
+      font-size: 1.2rem; /* Adjust icon size */
+    }
+  }
+    </style>
+  </head>
+  <body>
+    <!-- From Uiverse.io by SelfMadeSystem -->
+    <div class="containerx">
+        <div class="containery">
+            <header>
+                <h1>Tourism.in</h1>
+                <p>
+                  Relieve the beauty of West Bengal | Incredible INDIA | Incredible West
+                  Bengal
+                </p>
+              </header>
+        </div>
+          <nav>
+            <div class="dropdown">
+              <select>
+                <option>All</option>
+                <option>Alipurduar</option>
+                <option>Bankura</option>
+                <option>Bardhaman</option>
+                <option>Coochbehar</option>
+                <option>Darjeeling</option>
+                <option>Hooghly</option>
+                <option>Howrah</option>
+                <option>Jalpaiguri</option>
+                <option>Jhargram</option>
+                <option>Kalimpong</option>
+                <option>Kolkata</option>
+                <option>Malda</option>
+                <option>Murshidabad</option>
+                <option>Nadia</option>
+                <option>North 24 Parganas</option>
+                <option>North Dinajpur</option>
+                <option>Paschim Bardhaman</option>
+                <option>Paschim Medinipur</option>
+                <option>Purba Bardhaman</option>
+              </select>
+            </div>
+            <a href="#">Further Details</a>
+            <a href="#">Hotel Bookings</a>
+            <a href="login.html" style="float: right">Sign-Up | Login</a>
+          </nav>
+          <div class="main-container">
+            <div class="main-content">
+              <div class="left">
+                <p id="para">
+                  West Bengal Tourism Development Corporation Limited (WBTDCL)
+                </p>
+              </div>
+              <div class="card-container">
+                <div class="card">
+                  <img
+                    src="https://voiceofadventure.com/wp-content/uploads/2022/06/beautiful-strawberry-garden-sunrise-doi-ang-khang-chiang-mai-thailand-scaled.jpg"
+                    alt="Destination 1"
+                  />
+                  <h3>Adventure</h3>
+                  <p>
+                    Experience the breathtaking views of the Himalayas and the famous
+                    tea gardens.it so beautiful.
+                  </p>
+                  <button>Explore More</button>
+                </div>
+                <div class="card">
+                  <img
+                    src="https://cdn.getyourguide.com/img/tour/63d95b9113c6c.jpeg/145.jpg"
+                    alt="Destination 2"
+                  />
+                  <h3>Spirituality & Temples</h3>
+                  <p>
+                    Kalighat Mandir is a 200-year-old temple dedicated to Goddess
+                    Kali.
+                  </p>
+                  <button>Explore More</button>
+                </div>
+                <div class="card">
+                  <img
+                    src="https://www.swarnabdutta.com/wp-content/uploads/2022/04/Eco-Park-Kolkata-930x620.jpeg"
+                    alt="Destination 3"
+                  />
+                  <h3>Eco Park</h3>
+                  <p>
+                    Eco Park is an exception to the New Town of Kolkata.this also my
+                    faviroute.
+                  </p>
+                  <button>Explore More</button>
+                </div>
+                <div class="card">
+                  <img
+                    src="https://im.hunt.in/cg/wb/About/Tourism/hill.jpg"
+                    alt="Destination 4"
+                  />
+                  <h3>Mountains</h3>
+                  <p>Durpin Dara Hill is on the hilltop in Kalimpong, West Bengal.</p>
+                  <button>Explore More</button>
+                </div>
+              </div>
+              <div class="card-container2">
+                <div class="card">
+                  <img
+                    src="https://wallpapercave.com/wp/wp9108669.jpg"
+                    alt="Destination 5"
+                  />
+                  <h3>Cultural Tourism</h3>
+                  <p>
+                    The state offers tourists the opportunity to explore the state's
+                    diverse and rich history and culture.
+                  </p>
+                  <button>Explore More</button>
+                </div>
+                <div class="card">
+                  <img
+                    src="https://www.fodors.com/wp-content/uploads/2018/10/shutterstock_294262202.jpg"
+                    alt="Destination 6"
+                  />
+                  <h3>Costal Tourism</h3>
+                  <p>
+                    West Bengal has a lazily stretched coastline that makes it an
+                    ideal place for the sea lovers.
+                  </p>
+                  <button>Explore More</button>
+                </div>
+                <div class="card">
+                  <img
+                    src="https://th.bing.com/th/id/OIP.BiwlRrzRmozP6aH8-p2vRwHaFj?pid=ImgDet&w=474&h=355&rs=1"
+                    alt="Destination 7"
+                  />
+                  <h3>Durga Puja</h3>
+                  <p>
+                    Durga Puja is the biggest festival of West Bengal and is
+                    celebrated across the state.
+                  </p>
+                  <button>Explore More</button>
+                </div>
+                <div class="card">
+                  <img
+                    src="https://www.trawell.in/blog/wp-content/uploads/2022/01/Bishnupur_Temples_Main-768x576.jpg"
+                    alt="Destination 8"
+                  />
+                  <h3>Heritage Tourism</h3>
+                  <p>
+                    West Bengal has gained recognition as a premier heritage tourism
+                    destination by UNESCO
+                  </p>
+                  <button>Explore More</button>
+                </div>
+              </div>
+            </div>
+            <div class="right">
+              <h2>Beauty of West Bengal</h2>
+              <p>
+                The serene Eastern Himalayas, the wide River Hooghly, the aromatic tea
+                gardens and the diversity of Sundarbans forests define this state. The
+                official language is Bengali. West Bengal is known for its fascinating
+                language and rich heritage along with the modern and tech-savvy
+                approach.
+              </p>
+              <video width="100%" controls>
+                <source
+                  src="https://www.w3schools.com/html/mov_bbb.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+              <div class="right2">
+                <h2>Popular Post</h2>
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/d/da/Taj-Mahal.jpg"
+                  alt="Taj Mahal"
+                  style="
+                    width: 100%;
+                    border-radius: 10px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                  "
+                />
+              </div>
+              <div class="social-icons">
+                <h2>Follow Us</h2>
+                <!-- From Uiverse.io by wilsondesouza -->
+                <ul class="example-2">
+                  <li class="icon-content">
+                    <a
+                      data-social="whatsapp"
+                      aria-label="Whatsapp"
+                      href="https://api.whatsapp.com/send?phone=+112067101079&amp;text=Save%20this%20to%20your%20Favorites%20-%20@wilsondesouza"
+                    >
+                      <div class="filled"></div>
+                      <svg
+                        xml:space="preserve"
+                        viewBox="0 0 24 24"
+                        class="bi bi-whatsapp"
+                        fill="currentColor"
+                        height="24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                        ></path>
+                      </svg>
+                    </a>
+                    <div class="tooltip">Whatsapp</div>
+                  </li>
+                  <li class="icon-content">
+                    <a
+                      data-social="facebook"
+                      aria-label="Facebook"
+                      href="https://www.facebook.com/"
+                    >
+                      <div class="filled"></div>
+                      <svg
+                        xml:space="preserve"
+                        viewBox="0 0 24 24"
+                        class="bi bi-facbook"
+                        fill="currentColor"
+                        height="24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M23.9981 11.9991C23.9981 5.37216 18.626 0 11.9991 0C5.37216 0 0 5.37216 0 11.9991C0 17.9882 4.38789 22.9522 10.1242 23.8524V15.4676H7.07758V11.9991H10.1242V9.35553C10.1242 6.34826 11.9156 4.68714 14.6564 4.68714C15.9692 4.68714 17.3424 4.92149 17.3424 4.92149V7.87439H15.8294C14.3388 7.87439 13.8739 8.79933 13.8739 9.74824V11.9991H17.2018L16.6698 15.4676H13.8739V23.8524C19.6103 22.9522 23.9981 17.9882 23.9981 11.9991Z"
+                        ></path>
+                      </svg>
+                    </a>
+                    <div class="tooltip">Facebook</div>
+                  </li>
+                  <li class="icon-content">
+                    <a
+                      data-social="instagram"
+                      aria-label="Instagram"
+                      href="https://www.instagram.com/"
+                    >
+                      <div class="filled"></div>
+                      <svg
+                        xml:space="preserve"
+                        viewBox="0 0 16 16"
+                        class="bi bi-instagram"
+                        fill="currentColor"
+                        height="16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
+                        ></path>
+                      </svg>
+                    </a>
+                    <div class="tooltip">Instagram</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <footer class="footer">
+            <div class="container">
+              <div class="row">
+                <div class="footer-col">
+                  <h4>company</h4>
+                  <ul>
+                    <li><a href="#">about us</a></li>
+                    <li><a href="#">our services</a></li>
+                    <li><a href="#">privacy policy</a></li>
+                    <li><a href="#">affiliate program</a></li>
+                  </ul>
+                </div>
+                <div class="footer-col">
+                  <h4>get help</h4>
+                  <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">booking</a></li>
+                    <li><a href="#">services</a></li>
+                    <li><a href="#">last year booking</a></li>
+                    <li><a href="#">total people</a></li>
+                  </ul>
+                </div>
+                <div class="footer-col">
+                  <h4>online booking</h4>
+                  <ul>
+                    <li><a href="#">us</a></li>
+                    <li><a href="#">india</a></li>
+                    <li><a href="#">chaina</a></li>
+                    <li><a href="#">indonasiya</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+          </footer>
+    </div>
+    <script>
+      
+    
+      // Scroll-to-Top Button
+      const scrollToTopButton = document.createElement("button");
+      scrollToTopButton.textContent = "↑";
+      scrollToTopButton.style.position = "fixed";
+      scrollToTopButton.style.bottom = "20px";
+      scrollToTopButton.style.right = "20px";
+      scrollToTopButton.style.padding = "10px 15px";
+      scrollToTopButton.style.border = "none";
+      scrollToTopButton.style.borderRadius = "5px";
+      scrollToTopButton.style.backgroundColor = "#ff416c";
+      scrollToTopButton.style.color = "white";
+      scrollToTopButton.style.cursor = "pointer";
+      scrollToTopButton.style.display = "none";
+      scrollToTopButton.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.1)";
+      scrollToTopButton.style.zIndex = "1000";
+      document.body.appendChild(scrollToTopButton);
+    
+      scrollToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          scrollToTopButton.style.display = "block";
+        } else {
+          scrollToTopButton.style.display = "none";
+        }
+      });
+
+      // Typewriter Effect for Header
+      document.addEventListener("DOMContentLoaded", () => {
+        const header = document.querySelector("header h1");
+        const text = "Welcome to Tourism.in";
+        let index = 0;
+    
+        function typeWriter() {
+          if (index < text.length) {
+            header.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeWriter, 100);
+          }
+        }
+    
+        header.textContent = ""; // Clear existing text
+        typeWriter();
+      });
+    
+      // Fade-in Effect on Scroll
+      const fadeInElements = document.querySelectorAll(".main-content, .right, .footer");
+
+      const fadeInOnScroll = () => {
+        fadeInElements.forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 100) {
+            el.style.opacity = 1;
+            el.style.transform = "translateY(0)";
+          }
+        });
+      };
+
+      fadeInElements.forEach((el) => {
+        el.style.opacity = 0;
+        el.style.transform = "translateY(20px)";
+        el.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
+      });
+
+      window.addEventListener("scroll", fadeInOnScroll);
+      fadeInOnScroll(); // Trigger on load
+    </script>
+  </body>
+</html>
